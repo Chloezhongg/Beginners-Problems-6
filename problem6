@@ -1,0 +1,56 @@
+###1. Is it a Triangle?
+
+def triangleTest(a, b, c):
+    # Sort the sides to identify the largest side
+    sides = sorted([a, b, c])
+    # Check if the sum of the two smaller sides is greater than the largest side
+    return sides[0] + sides[1] > sides[2]
+
+# Example usage:
+side1 = float(input("Enter the first side: "))
+side2 = float(input("Enter the second side: "))
+side3 = float(input("Enter the third side: "))
+
+if triangleTest(side1, side2, side3):
+    print("It is a triangle.")
+else:
+    print("It is not a triangle.")
+
+###2. Greetings
+Here's a program with three subroutines for greetings based on the time of day:
+
+def good_morning(name):
+    print(f"Good morning, {name}!")
+
+def good_afternoon(name):
+    print(f"Good afternoon, {name}!")
+
+def good_evening(name):
+    print(f"Good evening, {name}!")
+
+def greet_user():
+    name = input("What’s your name: ").strip()
+    time = int(input("What time is it (0-23): ").strip())
+
+    if 0 <= time <= 12:
+        good_morning(name)
+    elif 13 <= time <= 17:
+        good_afternoon(name)
+    elif 18 <= time <= 23:
+        good_evening(name)
+    else:
+        print("Invalid time entered.")
+
+###3. Even Numbers
+
+def getEven(numbers):
+    even_numbers = []
+    for num in numbers:
+        if num % 2 == 0:
+            even_numbers.append(num)
+    return even_numbers
+
+# Example usage:
+numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = getEven(numbers_list)
+print("Even numbers:", even_numbers)
